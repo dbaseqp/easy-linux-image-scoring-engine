@@ -28,10 +28,6 @@ INVALID = 3
 IMAGE_NAME = "INSERT_IMAGE_NAME"
 DEFAULT_USER = "CHANGE_ME"
 
-lastPoints = 0 
-runtime = "0:00"
-vulns = []
-
 class CheckObject:
     status = False
     points = 0
@@ -123,11 +119,10 @@ def get_time():
 ######
 #PUT VULNS BELOW:
 #ex: vulns.append(forensics(1, "What is autopilot?", 3))
+vulns = []
 vulns.append(ForensicsObject(10, 'Bob found', 1, 'bob'))
 
 def main():
-    global currHours
-    global currMinutes
     global runtime
     global total_points
     
@@ -156,7 +151,6 @@ def main():
                 curr_points += result.points
                 current_vulns += 1
                 vuln_lines.append(str(result) + '<br>\n')
-        lastPoints = curr_points
 
         # calculate run time from start time
         start_time = get_time()
