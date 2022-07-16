@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>{{IMAGENAME}} - Scoring Engine</title>
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="refresh" content=\"""" + str(REFRESH_RATE) + """;url=Scoring Report.html">
+</head>
+
+<body>
+    <div class="content">
+        <div class="headers">
+            <h1>{{IMAGENAME}}</h1>
+            <h3>Scoring Engine Running Time: {{RUNTIME}}</h3>
+            <h3>Current Team ID: <span style="color:green">{{NAME}}</span></h3>
+            <h2>{{POINTS}} out of {{TOTALPOINTS}} points received</h2>
+        </div>
+
+        <div class="vuln--list">
+            <h3>{{CURRENT}} out of {{VULNS}} scored security issues fixed, for a gain of {{POINTS}} points:</h3>
+            <p>
+                {{LIST}}
+            </p>
+        </div>
+    </div>
+
+    <p class="credits">
+        Scoring Engine by Gabriel Fok. Web design by Gabriel Fok.
+    </p>
+</body>
+</html>
