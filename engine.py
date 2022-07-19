@@ -107,7 +107,7 @@ def get_time():
 
 ######
 #PUT VULNS BELOW:
-#ex: vulns.append(forensics(1, "What is autopilot?", 3))
+#ex: vulns.append(ForensicsObject(10, 'Bob found', 1, 'bob'))
 vulns = []
 vulns.append(ForensicsObject(10, 'Bob found', 1, 'bob'))
 
