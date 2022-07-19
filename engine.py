@@ -28,21 +28,6 @@ INVALID = 3
 IMAGE_NAME = "INSERT_IMAGE_NAME"
 DEFAULT_USER = "CHANGE_ME"
 
-class CheckObject:
-    status = False
-    points = 0
-    comment = ''
-
-    def __init__(self, status, points, comment):
-        self.status = status
-        self.points = points
-        self.comment = comment
-
-    def __str__(self):
-        comment = self.comment
-        points = self.points
-        return f'{comment} - {points}'
-
 class Vuln:
     points = 0
     comment = ''
@@ -50,6 +35,11 @@ class Vuln:
     def __init__(self, points, comment):
         self.points = points
         self.comment = comment
+    
+    def __str__(self):
+        comment = self.comment
+        points = self.points
+        return f'{comment} - {points}'
 
 class ForensicsObject(Vuln):
     id = 0
@@ -66,12 +56,12 @@ class ForensicsObject(Vuln):
         with open(f'/home/{user}/Desktop/Forensics_{id}.txt') as f:
             for line in f.readlines():
                 if 'ANSWER: ' in line and self.answer in line:
-                    return CheckObject(True, self.points, self.comment)
+                    return self
         return False
 
 def write_scores(imageName, vuln_lines, currPoints, current_vulns, totalVulns, name):
-    with open('/opt/temp/template.html', 'r') as (template):
-        with open('/opt/temp/ScoringReport.html', 'w') as (output_file):
+    with open('/opt/temp/template.html', 'r') as template:
+        with open('/opt/temp/ScoringReport.html', 'w') as output_file:
             for line in template:
                 if line.strip() == '{{LIST}}':
                     for vulnLine in vuln_lines:
@@ -99,7 +89,6 @@ def store_time():
         f.write(str(start.hour)+'\n')
         f.write(str(start.minute)+'\n')
         f.write(str(start.second)+'\n')
-
 
 """
 Get time from temporary file.
