@@ -1,25 +1,10 @@
 # authors: Gabriel Fok
 
-from subprocess import Popen
-from tempfile import TemporaryFile
-import json
 import os
-import sys
-import getpass
 import math
-import itertools
 import re
-import subprocess
 from time import sleep
-from datetime import datetime, date, timedelta
-import requests
-import json
-import hashlib
-import base64
-import ast
-import random
-import string
-import urllib
+from datetime import datetime, timedelta
 
 UNSCORED = 0
 SCORED = 1
